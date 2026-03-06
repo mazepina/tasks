@@ -19,9 +19,9 @@ class TasksService
      */
     private $groupService;
 
-    public function __construct(GroupService $groupService)
+    public function __construct(GroupService $groupService, string $crmUrl, string $crmApiKey)
     {
-        $this->client = SimpleClientFactory::createClient('', '');
+        $this->client = SimpleClientFactory::createClient($crmUrl, $crmApiKey);
         $this->groupService = $groupService;
     }
 

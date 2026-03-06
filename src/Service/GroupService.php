@@ -9,9 +9,9 @@ class GroupService
 {
     private $client;
 
-    public function __construct()
+    public function __construct(string $crmUrl, string $crmApiKey)
     {
-        $this->client = SimpleClientFactory::createClient('https://patronatoalpormayor.simla.com', 'DXRkUwBQd8hCIsH9aQM2U7tTc8CGOEMh');
+        $this->client = SimpleClientFactory::createClient($crmUrl, $crmApiKey);
     }
 
     public function findGroupById(int $id)
