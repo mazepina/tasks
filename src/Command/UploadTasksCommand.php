@@ -50,7 +50,7 @@ class UploadTasksCommand extends Command
         $date = clone $end;
         $rows = $this->tasksService->getTasksArray($end);
         $date = $date->format('d');
-        $this->excelService->writeXLSX($this->projectDir . '/../tasks-'. $date .'.xlsx', $rows);
+        $this->excelService->writeXLSX($this->projectDir . '/public/tasks-' . $date . '.xlsx', $rows);
 
         return 0;
     }
